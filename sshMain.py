@@ -1,6 +1,8 @@
 import subprocess
 import os
 
+#Ivanp5885 - 2025
+
 def loadCfg():
     current_script = os.path.abspath(__file__) #current dir
     parent_directory = os.path.dirname(current_script) #parent dir
@@ -112,7 +114,7 @@ def ssh():
         if sys_platform == 'win32':
             cmd_command = f'start cmd.exe /K "{sshKey}"'
         if sys_platform == 'linux':
-            cmd_command = f'gnome-terminal -- {sshKey}'
+            cmd_command = f'gnome-terminal -- bash -c "{sshKey}; exec bash"'
         subprocess.Popen(cmd_command, shell=True)
 
     if KEY=="":
@@ -121,7 +123,7 @@ def ssh():
         if sys_platform == 'win32':
             cmd_command = f'start cmd.exe /K "{sshKey}"'
         if sys_platform == 'linux':
-            cmd_command = f'gnome-terminal -- {sshKey}'
+            cmd_command = f'gnome-terminal -- bash -c "{sshKey}; exec bash"'
         subprocess.Popen(cmd_command, shell=True)
 
 #MAIN
