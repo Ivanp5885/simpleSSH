@@ -7,7 +7,7 @@ You can put this project on a USB drive and connect from any device fast.
 Supports:Windows,Linux
 Not tested on:MacOS
 
-This is how the USB/Folder should look like.
+This is how the USB/Folder should look like:
 
 ```plaintext
   USB:.
