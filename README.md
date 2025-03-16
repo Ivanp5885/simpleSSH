@@ -9,6 +9,7 @@ Not tested on:MacOS
 
 This is how the USB/Folder should look like.
 
+```plaintext
   USB:.
   │   sshMain.py
   │
@@ -18,3 +19,4 @@ This is how the USB/Folder should look like.
   └───keys
           id_rsa
           id_rsa.pub
+```
