@@ -103,16 +103,25 @@ def ssh():
         print("PORT NOT SPECIFIED. USING 22.")
         port = 22
 
+import sys
+sys_platform = sys.platform
+    
     if KEY != "":
         print("Attempting authentication using key.")
         sshKey = f'ssh -i {KEY} {USER}@{HOST} -p {PORT}'
-        cmd_command = f'start cmd.exe /K "{sshKey}"'
+        if sys_platform == 'win32':
+            cmd_command = f'start cmd.exe /K "{sshKey}"'
+        if sys_platform == 'linux':
+            cmd_command = f'gnome-terminal -- {sshKey}'
         subprocess.Popen(cmd_command, shell=True)
 
     if KEY=="":
         print("NO KEY FOUND, UNABLE TO INITIATE PASSWORDLESS AUTHENTICATION. Trying regular connection.")
         sshKey = f'ssh {USER}@{HOST} -p {PORT}'
-        cmd_command = f'start cmd.exe /K "{sshKey}"'
+        if sys_platform == 'win32':
+            cmd_command = f'start cmd.exe /K "{sshKey}"'
+        if sys_platform == 'linux':
+            cmd_command = f'gnome-terminal -- {sshKey}'
         subprocess.Popen(cmd_command, shell=True)
 
 #MAIN
