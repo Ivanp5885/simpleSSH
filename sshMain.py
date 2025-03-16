@@ -72,16 +72,16 @@ def selectHost():
                             start=count
                     if start !=0:
                         if line[:9] == "    HOST=":
-                            print(f"IP FOUND. -> {line.split("=", 1)[1].strip()}")
+                            print(f"IP FOUND. -> {line.split('=', 1)[1].strip()}")
                             HOST = line.split("=", 1)[1].strip()
                         if line[:9] == "    USER=":
-                            print(f"USERNAME FOUND. -> {line.split("=", 1)[1].strip()}")
+                            print(f"USERNAME FOUND. -> {line.split('=', 1)[1].strip()}")
                             USER = line.split("=", 1)[1].strip()
                         if line[:9] == "    PORT=":
-                            print(f"PORT FOUND -> {line.split("=", 1)[1].strip()}")
+                            print(f"PORT FOUND -> {line.split('=', 1)[1].strip()}")
                             PORT = line.split("=", 1)[1].strip()
                         if line[:8] == "    KEY=":
-                            print(f"KEY FOUND -> {line.split("=", 1)[1].strip()}")
+                            print(f"KEY FOUND -> {line.split('=', 1)[1].strip()}")
                             KEY = line.split("=", 1)[1].strip()
                 count = count + 1
     return HOST, USER, PORT, KEY
