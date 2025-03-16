@@ -103,8 +103,8 @@ def ssh():
         print("PORT NOT SPECIFIED. USING 22.")
         port = 22
 
-import sys
-sys_platform = sys.platform
+    import sys
+    sys_platform = sys.platform
     
     if KEY != "":
         print("Attempting authentication using key.")
